@@ -1,0 +1,1 @@
+webpack serve --config ./build/webpack.dev.js;
