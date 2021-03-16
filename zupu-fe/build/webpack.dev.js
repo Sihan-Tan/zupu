@@ -26,6 +26,10 @@ const devConfig = {
       },
     },
   },
+  cache: {
+    type: 'filesystem',
+    cacheDirectory: resolve(__dirname, '..', '.cache'),
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: resolve(__dirname, "..", "public/index.html"),

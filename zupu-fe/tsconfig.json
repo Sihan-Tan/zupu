@@ -3,12 +3,15 @@
   "include": ["**/*.ts", "**/*.tsx"],
   "compileOnSave": true,
   "strict": true,
+  "outDir": "./dist",
+  "rootDir": "./",
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "esnext",
     "baseUrl": "./",
     "paths": {
       "@*": ["src/*"]
     },
+    "moduleResolution": "Node",
     "noImplicitAny": true,
     "noImplicitThis": true,
     "strictNullChecks": true,

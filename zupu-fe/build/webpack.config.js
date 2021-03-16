@@ -9,12 +9,12 @@ module.exports = {
   entry: {
     app: resolve(__dirname, "..", "src/index.tsx"),
   },
-  output: {
-    path: resolve(__dirname, "..", "dist/assets"),
-    filename: "scripts/[name]_[contenthash:5].js",
-    // chunkFilename: "scripts/[name]_[id]_[contenthash:5].js",
-    assetModuleFilename: "scripts/[name].[contenthash:5].bundle.[ext]",
-  },
+  // output: {
+  //   path: resolve(__dirname, "..", "dist/assets"),
+  //   filename: "scripts/[name]_[contenthash:5].js",
+  //   // chunkFilename: "scripts/[name]_[id]_[contenthash:5].js",
+  //   assetModuleFilename: "scripts/[name].[contenthash:5].bundle.[ext]",
+  // },
   experiments: {
     asset: true,
   },

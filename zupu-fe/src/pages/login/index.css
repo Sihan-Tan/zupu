@@ -1,0 +1,10 @@
+.login {
+  position: relative;
+
+}
+.login-form {
+  position: relative;
+  margin: 200px auto;
+  width: 50%;
+  max-width: 300px;
+}
