@@ -1,6 +1,7 @@
 const { resolve } = require("path");
 const { merge } = require("webpack-merge");
 const baseConfig = require("./webpack.config");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const devConfig = {
@@ -34,6 +35,12 @@ const devConfig = {
     new HtmlWebpackPlugin({
       template: resolve(__dirname, "..", "public/index.html"),
       filename: "index.html",
+    }),
+    new MiniCssExtractPlugin({
+      // 配置样式文件抽离插件
+      filename: "styles/[name].css",
+      chunkFilename: "styles/[name].css",
+      ignoreOrder: true,
     }),
   ],
 };

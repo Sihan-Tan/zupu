@@ -1,8 +1,8 @@
 const { resolve } = require("path");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const FriendlyErrorsPlugin = require("friendly-errors-webpack-plugin");
 const ProgressBarPlugin = require("progress-bar-webpack-plugin");
 const notifier = require("node-notifier");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: "development",
@@ -22,12 +22,12 @@ module.exports = {
     alias: {
       "@": resolve(__dirname, "..", "src/"),
     },
-    extensions: [".ts", ".tsx", ".js", ".mjs", ".json"],
+    extensions: [".ts", ".tsx", ".js", ".jsx", ".mjs", ".json"],
   },
   module: {
     rules: [
       {
-        test: /\.(js|ts|tsx)$/,
+        test: /\.(js|jsx|ts|tsx)$/,
         exclude: /(node_modules|bower_components)/,
         use: [
           {
@@ -94,11 +94,5 @@ module.exports = {
       clearConsole: true,
     }),
     new ProgressBarPlugin(),
-    new MiniCssExtractPlugin({
-      // 配置样式文件抽离插件
-      filename: "styles/[name].[contenthash:5].css",
-      chunkFilename: "styles/[name]_[id].[contenthash:5].css",
-      ignoreOrder: true,
-    }),
   ],
 };

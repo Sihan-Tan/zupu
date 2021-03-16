@@ -1,7 +1,6 @@
 {
-  // "files": ["./typings/index.d.ts"],
-  "include": ["**/*.ts", "**/*.tsx"],
-  "compileOnSave": true,
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.jsx"],
+  // "compileOnSave": true,
   "strict": true,
   "outDir": "./dist",
   "rootDir": "./",

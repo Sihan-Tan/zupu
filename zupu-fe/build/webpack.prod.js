@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CompressionPlugin = require("compression-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 
 const prodConfig = {
@@ -18,6 +19,12 @@ const prodConfig = {
         resolve(__dirname, "..", "dist/assets"),
         resolve(__dirname, "..", "dist/views"),
       ],
+    }),
+    new MiniCssExtractPlugin({
+      // 配置样式文件抽离插件
+      filename: "styles/[name].[contenthash:5].css",
+      chunkFilename: "styles/[name]_[id].[contenthash:5].css",
+      ignoreOrder: true,
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
